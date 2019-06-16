@@ -19,7 +19,7 @@ int main(){
 	Endereco e;
 	long posicao, primeiro, meio, ultimo;
 	
-	f = fopen("cep_ordenado.dat", "r");				//Abre o arquivo.
+	f = fopen("cep_ordenado.dat", "r");		//Abre o arquivo.
 	char meu_cep[8];
 	printf("Digite seu CEP: ");
 	scanf("%s", &meu_cep);
@@ -47,7 +47,7 @@ int main(){
 			ultimo = meio - 1;
 		}
 	}
-	printf("\n Numero de enderecos lidos: %d\n", cont);				//Imprime a quantidade de registros lidos até encontrar o procurado.
+	printf("\n Numero de enderecos lidos: %d\n", cont);	//Imprime a quantidade de registros lidos atÃ© encontrar o procurado.
 	fclose(f);
 	return 0;
 }
