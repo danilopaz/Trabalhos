@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
 
 typedef struct _Endereco Endereco;
 
@@ -37,6 +38,7 @@ int main(){
 		cont++;
 		fread(&e, sizeof(Endereco), 1, f);
 		if(strncmp(meu_cep, e.cep,8) == 0){
+			setlocale(LC_ALL, "");
 			printf("%.72s\n%.72s\n%.72s\n%.72s\n%.2s\n%.8s\n",e.logradouro,e.bairro,e.cidade,e.uf,e.sigla,e.cep);
 			break;
 		}
