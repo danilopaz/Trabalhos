@@ -28,12 +28,12 @@ int main(){
 	char diretorio[15];
 	f = fopen("cep.dat", "r");
 
-
+// Algoritmo que criará 8 arquivos com 10 registros em cada um.
 	int i;
 	for(i = 0; i < 8; i++){
-
+	// Função responsável por concatenar string com inteiro e armazenar numa nova string.
 		snprintf(diretorio, 15, "%s%d%s", dir, i, ext);
-		new_file = fopen(diretorio, "w");
+		new_file = fopen(diretorio, "w");	// Vai criar 1 arquivo a cada iteração.
 		int k;
 		for(k = 0; k < 10; k++){
 			fread(&e, sizeof(Endereco), 1, f);
@@ -45,7 +45,7 @@ int main(){
 	printf("\nArquivos criados com sucesso!!!\n");
 	fclose(f);
 
-
+	// Algoritmo que orderna cada arquivo individualmente
 	Endereco *e2;
 	FILE *arq;
 	long posicao, qtde;
@@ -70,7 +70,7 @@ int main(){
 	fclose(arq);
 	free(e2);
 
-
+	//Algoritmo de intercalacao entra aqui
 	FILE *a, *b, *saida;
     Endereco ea, eb;
     int prox = 0, n = 8;
